@@ -5,8 +5,7 @@ import { Button } from "./components/button/Button";
 
 function App() {
   const [count, setCount] = useState(0);
-<<<<<<< HEAD
-  const [error, setError] = useState("");
+  const [error, setError] = useState(""); 
 
   const updateCounter = (increase: boolean) => {
     setCount((currentValue) => {
@@ -21,12 +20,6 @@ function App() {
           return currentValue;
         }
       }
-=======
-
-  const updateCounter = (increase: boolean) => {
-    setCount((currentValue) => {
-      return increase ? currentValue + 1 : currentValue - 1;
->>>>>>> cbcd35757d1d78f8fee84d02d8dd21f245c9603f
     });
   };
 
@@ -38,12 +31,8 @@ function App() {
       <div className="container d-flex justify-content-center">
         <div className="card bg-white shadow text-center p-4 m-4">
           <h1>Counter: {count}</h1>
-<<<<<<< HEAD
-
           {error && <p style={{ color: "red" }}>{error}</p>}
 
-=======
->>>>>>> cbcd35757d1d78f8fee84d02d8dd21f245c9603f
           <div className="d-flex justify-content-center flex-wrap gap-2">
             <Button color="primary" onClick={() => updateCounter(true)}>
               Increase +
@@ -51,17 +40,13 @@ function App() {
             <Button color="secondary" onClick={() => updateCounter(false)}>
               Decrease -
             </Button>
-<<<<<<< HEAD
             <Button
               color="danger"
               onClick={() => {
                 setCount(0);
-                setError("");
+                setError(""); 
               }}
             >
-=======
-            <Button color="danger" onClick={() => setCount(0)}>
->>>>>>> cbcd35757d1d78f8fee84d02d8dd21f245c9603f
               Reset
             </Button>
           </div>
