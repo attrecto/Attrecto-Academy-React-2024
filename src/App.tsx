@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Navbar from "./components/navbar/Navbar";
-import { Button } from "./components/button/button";
+import { Button } from "./components/button/Button";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,7 +16,7 @@ function App() {
         if (currentValue > 0) {
           return currentValue - 1;
         } else {
-          setError("Counter can't go below 0!");
+          setError("Counter cannot go below 0");
           return currentValue;
         }
       }
