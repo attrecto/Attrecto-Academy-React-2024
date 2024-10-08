@@ -12,6 +12,8 @@ import TagField from "../../components/tag-field/TagField";
 import { badgesService } from "../../services/badges.service";
 import { userService } from "../../services/user.service";
 import { Button } from "../../components/button/Button";
+import ProfileImagePreview from "../../components/profileimagepreview/profileimagepre";
+
 
 const schema = Yup.object({
   name: Yup.string().required(),
@@ -43,9 +45,32 @@ export const UserPage = () => {
     resolver: yupResolver(schema),
   });
 
+  const UserPage = () => {
+    const [imageUrl, setImageUrl] = useState('');
+  
+    const handleInputChange = (t) => {
+      setImageUrl(t.target.value);
+    };
+  
+    return (
+      <div>
+        <h1>User Profile</h1>
+        <input 
+          type="text" 
+          placeholder="Enter image URL" 
+          value={imageUrl} 
+          onChange={handleInputChange} 
+          style={{ marginBottom: '20px', padding: '10px', width: '300px' }}
+        />
+        <ProfileImagePreview imageUrl={imageUrl} />
+      </div>
+    );
+  };
+
+
   useEffect(() => {
     const fetchUser = async (id: string | number) => {
-      const response = await userService.geUser(id);
+      const response = await userService.getUser(id);
       setUser(response);
     }
 
